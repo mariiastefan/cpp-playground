@@ -17,7 +17,8 @@ void printOddOrEven(int number)
 
 int main(int argc, char *argv[])
 {
-	int number = -13;
+	int number;
+	std::cin >> number;
 
 	// What is this program expected to do?
 	// - Shows whether an argument is an ODD or EVEN number.
