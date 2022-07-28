@@ -18,7 +18,6 @@ void printOddOrEven(int number)
 int main(int argc, char *argv[])
 {
 	int number;
-	std::cin >> number;
 
 	// What is this program expected to do?
 	// - Shows whether an argument is an ODD or EVEN number.
@@ -47,8 +46,8 @@ int main(int argc, char *argv[])
 	//number = argv[1]; // No
 	//should use atoi?
 	// or std::stoi?
-
-	std::cout << argumentAsString << std::endl; // i think this should be removed
+	number = std::stoi(argv[1]);
+	//std::cout << argumentAsString << std::endl; // i think this should be removed
 
 	// --------------- stop
 
