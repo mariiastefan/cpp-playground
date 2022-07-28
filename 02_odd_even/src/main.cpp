@@ -7,11 +7,11 @@ void printOddOrEven(int number)
 {
 	if (number % 2 == 0)
 	{
-		printf("EVEN\n");
+		printf("EVEN");
 	}
 	else
 	{
-		printf("ODD\n");
+		printf("ODD");
 	}
 }
 
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 	// Make sure there are some program arguments available.
 	if (argc <= 1)
 	{
-		printf("No program arguments found.\n");
+		printf("No program arguments found.");
 	}
 	
 	// TODO(Gusti): i don't know why this doesn't work, but someone please FIX it.
@@ -46,12 +46,18 @@ int main(int argc, char *argv[])
 	//number = argv[1]; // No
 	//should use atoi?
 	// or std::stoi?
-	number = std::stoi(argv[1]);
+	try {
+		number = std::stoi(argv[1]);
+		printOddOrEven(number);
+	}
+	catch (std::exception e) {
+		std::cout << "NAN";
+	}
 	//std::cout << argumentAsString << std::endl; // i think this should be removed
 
 	// --------------- stop
 
-	printOddOrEven(number);
+
 
 	return 0;
 }
