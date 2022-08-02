@@ -1,9 +1,31 @@
 #include <iostream>
+#include <string>
 
 bool isArmstrongNumber(int number)
 {
 	// TODO: implement some functionality to see if this number is an armstrong number
+	int copy = number;
+	int length_copy = number;
+	int length = 0;
 
+	do 
+	{
+		++length;
+		length_copy /= 10;
+
+	} while (length_copy);
+
+	int result = 0;
+	do
+	{
+		int digit = copy % 10;
+		copy /= 10;
+		result += pow(digit, length);
+
+	} while (copy);
+
+	if (result == number)
+		return true;
 	return false;
 }
 
@@ -44,7 +66,7 @@ int main(int argc, char *argv[])
 	if (argc <= 1)
 	{
 		std::cout << "No program arguments found." << std::endl;
-		return 1;
+		return 0;
 	}
 
 	int readNumber = 0;
@@ -52,7 +74,16 @@ int main(int argc, char *argv[])
 	std::string argumentAsString = argv[1];
 	
 	// TODO: read number / cast to integer
+	/*readNumber = std::stoi(argv[1]);*/
 
-	printIsArmstrong(readNumber);
+	try {
+		readNumber = std::stoi(argv[1]);
+		printIsArmstrong(readNumber);
+	}
+	catch (std::exception e) {
+		std::cout << " Undefined output (do whatever)";
+	}
+
+	
 	return 0;
 }
